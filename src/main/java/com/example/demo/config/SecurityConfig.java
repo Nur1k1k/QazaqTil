@@ -27,7 +27,7 @@ public class SecurityConfig {
         http
                 .securityMatcher("/**")
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/register", "/css/**").permitAll()
+                        .requestMatchers("/", "/register", "/css/**","/index").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
@@ -47,7 +47,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    // Optional: You can use this if you're using AuthenticationManager explicitly
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();

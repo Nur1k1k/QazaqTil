@@ -29,6 +29,7 @@ public class MainController {
         return "dictionary";
     }
 
+
     @GetMapping("/")
     public String home() {
         return "index";
@@ -72,10 +73,10 @@ public class MainController {
     public String tests() {
         return "tests";
     }
-
-    @GetMapping("/courses")
-    public String courses() {
-        return "courses";
-    }
+//
+//    @GetMapping("/courses")
+//    public String courses() {
+//        return "courses";
+//    }
 
 }

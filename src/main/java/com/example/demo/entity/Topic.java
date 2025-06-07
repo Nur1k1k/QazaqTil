@@ -10,6 +10,5 @@ public class Topic {
     private Long id;
     private String title;
     private String description;
-    @Column(columnDefinition = "TEXT")
-    private String content;
+
 }

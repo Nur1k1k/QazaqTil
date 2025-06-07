@@ -9,8 +9,7 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String description;
-    private String level; // A1, A2, etc.
+
     @Column(columnDefinition = "TEXT")
     private String content;
 }

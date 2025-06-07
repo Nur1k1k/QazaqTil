@@ -14,8 +14,5 @@ public class TestQuestion {
 
     private String question;
     private String correctAnswer;
-    private String optionA;
-    private String optionB;
-    private String optionC;
-    private String optionD;
+
 }

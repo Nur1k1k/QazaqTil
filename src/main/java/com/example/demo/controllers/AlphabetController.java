@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.entity.AlphabetLetter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,16 +13,16 @@ public class AlphabetController {
 
     @GetMapping("/alphabet")
     public String alphabet(Model model) {
-        // Kazakh specific letters with pronunciation
+
         List<AlphabetLetter> kazakhSpecificLetters = Arrays.asList(
-                new AlphabetLetter("Ә", "ә", "[æ] like 'a' in 'cat'"),
-                new AlphabetLetter("Ғ", "ғ", "[ʁ] guttural 'g'"),
-                new AlphabetLetter("Қ", "қ", "[q] like 'q' in 'Qatar'"),
-                new AlphabetLetter("Ң", "ң", "[ŋ] like 'ng' in 'sing'"),
-                new AlphabetLetter("Ө", "ө", "[œ] like German 'ö'"),
-                new AlphabetLetter("Ұ", "ұ", "[ʊ] like 'u' in 'put'"),
-                new AlphabetLetter("Ү", "ү", "[y] like German 'ü'"),
-                new AlphabetLetter("Һ", "һ", "[h] like 'h' in 'house'")
+                new AlphabetLetter("Ә", "ә", "Әже"),
+                new AlphabetLetter("Ғ", "ғ", "Ғаламшар"),
+                new AlphabetLetter("Қ", "қ", "Қалам"),
+                new AlphabetLetter("Ң", "ң", "аҢ"),
+                new AlphabetLetter("Ө", "ө", "Өшіргіш"),
+                new AlphabetLetter("Ұ", "ұ", "Ұя"),
+                new AlphabetLetter("Ү", "ү", "Үтік"),
+                new AlphabetLetter("Һ", "һ", "қаHарман")
         );
 
         List<AlphabetLetter> commonLetters = Arrays.asList(
@@ -61,58 +62,13 @@ public class AlphabetController {
                 new AlphabetLetter("Я", "я", "[ja] like 'ya' in 'yard'")
         );
 
-        // Pronunciation examples
-        List<PronunciationExample> examples = Arrays.asList(
-                new PronunciationExample("Ә", "Әже", "Grandmother", "[æ-ʒe]"),
-                new PronunciationExample("Ғ", "Ғалам", "Universe", "[ʁa-lam]"),
-                new PronunciationExample("Қ", "Қазақ", "Kazakh", "[qa-zaq]"),
-                new PronunciationExample("Ң", "Аң", "Animal", "[aŋ]"),
-                new PronunciationExample("Ө", "Өнер", "Art", "[œ-ner]"),
-                new PronunciationExample("Ү", "Үй", "House", "[yj]"),
-                new PronunciationExample("Ж", "Жол", "Road", "[ʒol]"),
-                new PronunciationExample("Ш", "Шаш", "Hair", "[ʃaʃ]")
-        );
 
         model.addAttribute("kazakhSpecificLetters", kazakhSpecificLetters);
         model.addAttribute("commonLetters", commonLetters);
-        model.addAttribute("examples", examples);
-
         return "alphabet";
     }
 
-    public static class AlphabetLetter {
-        private String uppercase;
-        private String lowercase;
-        private String pronunciation;
 
-        public AlphabetLetter(String uppercase, String lowercase, String pronunciation) {
-            this.uppercase = uppercase;
-            this.lowercase = lowercase;
-            this.pronunciation = pronunciation;
-        }
 
-        // Getters
-        public String getUppercase() { return uppercase; }
-        public String getLowercase() { return lowercase; }
-        public String getPronunciation() { return pronunciation; }
-    }
 
-    public static class PronunciationExample {
-        private String letter;
-        private String word;
-        private String translation;
-        private String pronunciation;
-
-        public PronunciationExample(String letter, String word, String translation, String pronunciation) {
-            this.letter = letter;
-            this.word = word;
-            this.translation = translation;
-            this.pronunciation = pronunciation;
-        }
-
-        public String getLetter() { return letter; }
-        public String getWord() { return word; }
-        public String getTranslation() { return translation; }
-        public String getPronunciation() { return pronunciation; }
-    }
 }
