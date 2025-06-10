@@ -3,33 +3,43 @@
 <head><title>Topics</title></head>
 <style>
     :root {
-        --primary: #1a85fa;          /* Deep blue */
-        --primary-light: #E3F2FD;    /* Light blue background */
-        --secondary: #182f95;        /* Indigo secondary */
-        --accent: #42A5F5;           /* Lighter blue accent */
+        --primary: #1a85fa;
+        --primary-light: #e3f2fd;
+        --secondary: #182f95;
+        --accent: #42a5f5;
         --white: #fff;
-        --gray-light: #F5F5F5;
+        --gray-light: #f5f5f5;
         --gray-dark: #424242;
-        --difficult: #E65100;        /* Orange for difficult words */
     }
+
     body {
-        margin: 0; padding: 0;
+        margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: var(--gray-light);
-        color: #333;
-        line-height: 1.5;
+        color: var(--gray-dark);
     }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
     header {
         background: var(--primary);
         color: var(--white);
         padding: 1rem 2rem;
-        display: flex; justify-content: space-between; align-items: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
+
     .logo h1 {
-        margin: 0; font-weight: 700; font-size: 1.5rem;
-        color: var(--white);
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: bold;
     }
+
     .auth-links a {
         color: var(--white);
         text-decoration: none;
